@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="alumni_1" schema="alumni_1" type="MySQL - 5.5.5-10.6.5-MariaDB-2">
+   <tables>
+      <table catalog="alumni_1" name="alumnos" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_alumno" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_alumno" foreignKey="familiares_alumnos_alumno" implied="false" onDeleteCascade="false" table="familiares_alumnos"/>
+            <child catalog="alumni_1" column="id_alumno" foreignKey="matricula_id_alumno" implied="false" onDeleteCascade="false" table="matricula"/>
+            <child catalog="alumni_1" column="id_alumno" foreignKey="notas_id_estudiante" implied="false" onDeleteCascade="false" table="notas"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre_alumno" nullable="false" remarks="" size="100" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="edad_alumno" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="genero_alumno" nullable="false" remarks="" size="1" type="BIT" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="identidad_alumno" nullable="false" remarks="" size="10" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="id_alumno" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_alumno"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="asignaturas" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_asignatura" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_asignatura" foreignKey="matricula_id_asignatura" implied="false" onDeleteCascade="false" table="matricula"/>
+            <child catalog="alumni_1" column="id_asignatura" foreignKey="notas_id_asignatura" implied="false" onDeleteCascade="false" table="notas"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre_asignatura" nullable="false" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_carrera" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_carrera" foreignKey="asignatura_id_carrera" implied="false" onDeleteCascade="false" table="carreras"/>
+         </column>
+         <primaryKey column="id_asignatura" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_asignatura"/>
+         </index>
+         <index name="asignatura_id_carrera" unique="false">
+            <column ascending="true" name="id_carrera"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="aulas" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_aula" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_aula" foreignKey="matricula_id_aula" implied="false" onDeleteCascade="false" table="matricula"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="descripcion_aula" nullable="false" remarks="" size="100" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="id_aula" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_aula"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="carreras" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_carrera" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_carrera" foreignKey="asignatura_id_carrera" implied="false" onDeleteCascade="false" table="asignaturas"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre_carrera" nullable="false" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="id_carrera" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_carrera"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="familiares" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_familiar" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_familiar" foreignKey="familiares_alumnos_familiar" implied="false" onDeleteCascade="false" table="familiares_alumnos"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre_familiar" nullable="false" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="parentesco_familiar" nullable="false" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="edad_familiar" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="genero_familiar" nullable="false" remarks="" size="1" type="BIT" typeCode="-7"/>
+         <primaryKey column="id_familiar" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_familiar"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="familiares_alumnos" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_familiaridad" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_familiar" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_familiar" foreignKey="familiares_alumnos_familiar" implied="false" onDeleteCascade="false" table="familiares"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_alumno" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_alumno" foreignKey="familiares_alumnos_alumno" implied="false" onDeleteCascade="false" table="alumnos"/>
+         </column>
+         <primaryKey column="id_familiaridad" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_familiaridad"/>
+         </index>
+         <index name="familiares_alumnos_alumno" unique="false">
+            <column ascending="true" name="id_alumno"/>
+         </index>
+         <index name="familiares_alumnos_familiar" unique="false">
+            <column ascending="true" name="id_familiar"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="horarios" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_horario" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_horario" foreignKey="matricula_id_horario" implied="false" onDeleteCascade="false" table="matricula"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="inicio_horario" nullable="false" remarks="" size="8" type="TIME" typeCode="92"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="final_horario" nullable="false" remarks="" size="8" type="TIME" typeCode="92"/>
+         <primaryKey column="id_horario" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_horario"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="maestros" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_maestro" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_maestro" foreignKey="matricula_id_maestro" implied="false" onDeleteCascade="false" table="matricula"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre_maestro" nullable="false" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="edad_maestro" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <primaryKey column="id_maestro" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_maestro"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="matricula" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_matricula" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <child catalog="alumni_1" column="id_matricula" foreignKey="recibos_id_matricula" implied="false" onDeleteCascade="false" table="recibos"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_alumno" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_alumno" foreignKey="matricula_id_alumno" implied="false" onDeleteCascade="false" table="alumnos"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_maestro" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_maestro" foreignKey="matricula_id_maestro" implied="false" onDeleteCascade="false" table="maestros"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="id_asignatura" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_asignatura" foreignKey="matricula_id_asignatura" implied="false" onDeleteCascade="false" table="asignaturas"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="id_aula" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_aula" foreignKey="matricula_id_aula" implied="false" onDeleteCascade="false" table="aulas"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="id_horario" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_horario" foreignKey="matricula_id_horario" implied="false" onDeleteCascade="false" table="horarios"/>
+         </column>
+         <primaryKey column="id_matricula" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_matricula"/>
+         </index>
+         <index name="matricula_id_alumno" unique="false">
+            <column ascending="true" name="id_alumno"/>
+         </index>
+         <index name="matricula_id_asignatura" unique="false">
+            <column ascending="true" name="id_asignatura"/>
+         </index>
+         <index name="matricula_id_aula" unique="false">
+            <column ascending="true" name="id_aula"/>
+         </index>
+         <index name="matricula_id_horario" unique="false">
+            <column ascending="true" name="id_horario"/>
+         </index>
+         <index name="matricula_id_maestro" unique="false">
+            <column ascending="true" name="id_maestro"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="notas" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_nota" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_alumno" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_alumno" foreignKey="notas_id_estudiante" implied="false" onDeleteCascade="false" table="alumnos"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_asignatura" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_asignatura" foreignKey="notas_id_asignatura" implied="false" onDeleteCascade="false" table="asignaturas"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="nota" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <primaryKey column="id_nota" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_nota"/>
+         </index>
+         <index name="notas_id_asignatura" unique="false">
+            <column ascending="true" name="id_asignatura"/>
+         </index>
+         <index name="notas_id_estudiante" unique="false">
+            <column ascending="true" name="id_alumno"/>
+         </index>
+      </table>
+      <table catalog="alumni_1" name="recibos" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id_recibo" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="descripcion_recibo" nullable="false" remarks="" size="100" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_matricula" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="alumni_1" column="id_matricula" foreignKey="recibos_id_matricula" implied="false" onDeleteCascade="false" table="matricula"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="fecha_recibo" nullable="false" remarks="" size="10" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="4" name="monto_recibo" nullable="false" remarks="" size="10" type="DECIMAL" typeCode="3"/>
+         <primaryKey column="id_recibo" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id_recibo"/>
+         </index>
+         <index name="recibos_id_matricula" unique="false">
+            <column ascending="true" name="id_matricula"/>
+         </index>
+      </table>
+   </tables>
+</database>

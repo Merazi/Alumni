@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/notas.css" type="text/css">
+	<link rel="stylesheet" href="../css/generic.css" type="text/css">
+	<title>Notas</title>
+    </head>
+    <body>
+	<header class="generic_header">
+	    <h1>Alumni - Reporte de notas</h1>
+	</header>
+
+	<main>
+	    <div class="busqueda">
+		<div>
+		    <label>Identidad Alumno</label>
+		    <input id="txt_id_alumno" type="text"/>
+		</div>
+		<input type="button" value="Buscar"/>
+	    </div>
+	    <div class="main_content">
+		<div id="table_notas">
+		    <table>
+			<tr>
+			    <th>Nombre</th>
+			    <th>Nota 1</th>
+			    <th>Nota 2</th>
+			    <th>Nota 3</th>
+			    <th>Nota 4</th>
+			    <th>Identidad</th>
+			</tr>
+
+			<!-- Esto se debería generar desde la base de datos -->
+			<tr>
+			    <td>Juan</td>
+			    <td>89</td>
+			    <td>92</td>
+			    <td>100</td>
+			    <td>86</td>
+			    <td>12938102948</td>
+			</tr>
+			<tr>
+			    <td>Pedro</td>
+			    <td>89</td>
+			    <td>92</td>
+			    <td>100</td>
+			    <td>86</td>
+			    <td>12938102949</td>
+			</tr>
+		    </table>
+		</div> <!-- tabla de notas -->
+
+		<div id="control_notas">
+		    <label>Actualizar Nota</label>
+
+		    <select name="lista_notas">
+			<option>Nota 1</option>
+			<option>Nota 2</option>
+			<option>Nota 3</option>
+			<option>Nota 4</option>
+		    </select>
+
+		    <label>Ingresar Nota</label>
+		    <input id="txt_nota" type="text"/>
+
+		</div> <!-- control de notas -->
+
+	    </div>
+	</main>
+
+	<footer class="generic_footer">
+	    <p>Alumni® 2022 - UTH Grupo 1 Ingeniería de Software II</p>
+	</footer>
+    </body>
+</html>

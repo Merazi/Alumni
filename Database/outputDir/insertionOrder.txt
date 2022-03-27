@@ -1,0 +1,11 @@
+alumnos
+aulas
+carreras
+familiares
+horarios
+maestros
+asignaturas
+matricula
+recibos
+familiares_alumnos
+notas

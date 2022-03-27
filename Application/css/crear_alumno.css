@@ -1,0 +1,16 @@
+.ingreso_estudiante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    height: 12rem;
+}
+
+.input_field {
+    margin: .4rem;
+}
+
+#div_botones{
+    display: flex;
+    justify-content: space-evenly;
+}

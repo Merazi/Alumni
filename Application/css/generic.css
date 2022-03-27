@@ -1,0 +1,66 @@
+/* Estilos para cosas que se repiten en varios formularios */
+html {
+    width: 60%;
+    margin: auto;
+}
+
+/* Header genérico para cada página */
+.generic_header {
+    width: 100%;
+    text-align: left;
+    background: lightgrey;
+    padding: .2rem;
+}
+
+.generic_header:hover {
+    color: darkgreen;
+}
+
+/* Footer genérico para cada página */
+.generic_footer {
+    position: fixed;
+    left: 0; bottom: 0;
+    width: 100%;
+    background: lightgray;
+    font-size: x-small;
+}
+
+/* Estilos para los formularios */
+.tool_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.table_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Estilo genérico para tablas */
+table {
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    width: 100%
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #eeeeee;}
+
+tr:hover {background-color: #cccccc;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #22f89c;
+}
