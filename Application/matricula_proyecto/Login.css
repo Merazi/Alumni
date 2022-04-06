@@ -1,0 +1,209 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  background-image: url(fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+main{
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
+}
+.contenedor{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+.contenedor_trasero{
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter:blur(5px);
+  border-radius:20px;
+}
+
+.contenedor_trasero div{
+  margin: 100px 40px;
+  color: white;
+  transition: all 500ms;
+
+}
+
+.contenedor_trasero div p,
+.contenedor_trasero button{
+  margin-top: 30px;
+}
+
+.contenedor_trasero div h3{
+  font-weight: 400;
+  font-size: 26px;
+}
+.contenedor_trasero div p{
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.contenedor_trasero button{
+  padding: 10px 40px;
+  border: 2px solid #fff;
+  font-size: 14px;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  transition: all 300ms;
+}
+.contenedor_trasero button:hover{
+  background: #fff;
+  color: #43559D;
+}
+
+.contenedor_de_Inicio_de_sesion_y_registrarse{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  top: -185px;
+  left: 10px;
+  transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.contenedor_de_Inicio_de_sesion_y_registrarse form{
+  width: 100%;
+  padding: 80px 20px;
+  background: white;
+  position: absolute;
+  border-radius: 20px;
+}
+.contenedor_de_Inicio_de_sesion_y_registrarse form h2{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #8D5144;
+}
+.contenedor_de_Inicio_de_sesion_y_registrarse form input{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #F2F2F2;
+  font-size: 16px;
+  outline: none;
+}
+.contenedor_de_Inicio_de_sesion_y_registrarse form button{
+  padding: 10px 40px;
+  margin-top: 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #8D5144;
+  cursor: pointer;
+  color: white;
+  outline: none;
+}
+
+.formulario_Inicio_de_sesion{
+  opacity: 1;
+  display: block;
+  position: relative;
+  left: 20%;
+}
+.formulario_registrarse{
+  display: none;
+  position: relative;
+  left: 20%;
+}
+
+@media screen and (max-width: 850px){
+
+  main{
+    margin-top: 50px;
+  }
+
+  .contenedor_trasero{
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .contenedor_trasero div{
+    margin: 0px;
+    position: absolute;
+  }
+
+
+  /*Formularios*/
+
+  .contenedor_de_Inicio_de_sesion_y_registrarse{
+    top: -10px;
+    left: -5px;
+    margin: auto;
+  }
+
+  .contenedor_de_Inicio_de_sesion_y_registrarse form{
+    position: relative;
+  }
+}
+
+#botonCancel{
+  background-color: #4F3743;
+  color: white;
+}
+
+#botonCancel:hover{
+  background-color: #422F39;
+  border-radius: 2px solid #000000;    
+}
+
+
+
+
+.button {
+  display: flex;
+  height: 50px;
+  padding: 0;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #008168;
+}
+
+.button:active {
+  background: #006e58;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+}
+
+.button__icon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}

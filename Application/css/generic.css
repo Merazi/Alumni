@@ -4,6 +4,14 @@ html {
     margin: auto;
 }
 
+body {
+  background-image: url(fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* Header genérico para cada página */
 .generic_header {
     width: 100%;
